@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestionnaire de films</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="page">
+
+    <header class="app-header">
+      <h1>🎬 Gestionnaire de films</h1>
+      <p>Ajoutez des films à votre collection.</p>
+    </header>
+
+    <main>
+
+      <!-- Carte 1 : formulaire d'ajout -->
+      <section class="card" aria-labelledby="form-title">
+        <h2 id="form-title">Ajouter un film</h2>
+
+        <form id="movie-form" novalidate>
+
+          <div class="form-group">
+            <label for="titre">Titre</label>
+            <input type="text" id="titre" name="titre" autocomplete="off">
+            <p class="error-message" id="error-titre"></p>
+          </div>
+
+          <div class="form-group">
+            <label for="realisateur">Réalisateur</label>
+            <input type="text" id="realisateur" name="realisateur" autocomplete="off">
+            <p class="error-message" id="error-realisateur"></p>
+          </div>
+
+          <div class="form-group">
+            <label for="annee">Année de sortie</label>
+            <input type="number" id="annee" name="annee">
+            <p class="error-message" id="error-annee"></p>
+          </div>
+
+          <div class="form-group">
+            <label for="duree">Durée (minutes)</label>
+            <input type="number" id="duree" name="duree">
+            <p class="error-message" id="error-duree"></p>
+          </div>
+
+          <div class="form-group">
+            <label for="genre">Genre</label>
+            <select id="genre" name="genre">
+              <option value="">-- Choisir un genre --</option>
+              <option value="Action">Action</option>
+              <option value="Comédie">Comédie</option>
+              <option value="Drame">Drame</option>
+              <option value="Science-fiction">Science-fiction</option>
+              <option value="Thriller">Thriller</option>
+              <option value="Animation">Animation</option>
+            </select>
+            <p class="error-message" id="error-genre"></p>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Ajouter le film</button>
+
+        </form>
+      </section>
+
+      <!-- Carte 2 : collection de films -->
+      <section class="card" aria-labelledby="list-title">
+        <div class="card-header">
+          <h2 id="list-title">Films enregistrés</h2>
+          <button type="button" id="clear-all" class="btn btn-secondary">Tout supprimer</button>
+        </div>
+
+        <ul id="movie-list" class="movie-list"></ul>
+        <p id="empty-message" class="empty-message">Aucun film enregistré.</p>
+      </section>
+
+    </main>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
